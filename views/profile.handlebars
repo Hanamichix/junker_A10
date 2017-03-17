@@ -1,0 +1,122 @@
+<!doctype html>
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>myProfile</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/bootstrap-theme.css" rel="stylesheet">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="css/browse.css" rel="stylesheet">
+  <link href="css/sidebar.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+  <script src="js/browse.js"></script>
+  <script src="js/sidebar.js"></script>
+    <link href = "css/profile.css" rel = "stylesheet">
+    
+</head>
+<body>
+
+        <!-- h1 through h6 are headers. The higher the number, the smaller the header -->
+        <!-- p means paragraph -->
+    <nav class="navbar navbar-default navbar-collapse">
+      <div class="container-fluid">
+        <div class = "navbar-header">
+        <span style="font-size:30px;float:left; width:20%; top:5px " onclick="openNav()" class = "glyphicon">&#xe055;</span>
+        <span style="font-size:30px;float:right; top:5px"  class = "glyphicon"><a href="index" style="color:black">&#xe021;</a></span>
+        <span style="font-size:30px; ">Profile</span>
+        <!--
+
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="match"> Matches</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="index"><span class="glyphicon glyphicon-home"></span></a></li>
+          <li><a href="login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        </ul>
+        -->
+      </div>
+      </div>
+    </nav>
+
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <a href="browse">Browse</a>
+      <a href="match">Matches</a>
+      <a href="newpost">Create New Post</a>
+      <a href="myPost">My Posts</a>
+      <a href="profile">Profile</a>
+      <a href="index">Log Out</a>
+
+
+    </div>
+    <div>
+        <aside class="profile-card">
+
+            <header>
+
+                    <!-- here’s the avatar -->
+                <img src="http://lorempixel.com/400/400/people">
+
+                    <!-- the username -->
+                <h1>Pei Xu</h1>
+
+                <h2>- my biography -</h2>
+
+            </header>
+
+                <!-- bit of a bio; who are you? -->
+            <div class="profile-bio">
+
+                <p>Hello there!</p>
+                    <!-- Cross-platform compatible (Android + iPhone) -->
+                <a href="tel://1-555-555-5555">+1 (555) 555-5555</a> <br>
+                <a href="#" onclick="window.location='mailto:email@domain.com'; return false;" class="noHighlight">Email me</a><br>
+
+            </div>
+            <div class="button">
+                <button type="button" class="btn btn-outline-info" onclick="window.location.href='myPost'">My Posts</button>
+            </div>
+
+                <!-- some social links to show off -->
+            <ul class="profile-social-links">
+
+
+                    <!-- envato – use this one to link to your marketplace profile -->
+                <li>
+                    <a href="https://www.facebook.com">
+                        <img src="/images/facebook.png">
+                    </a>
+                </li>
+                    <!-- twitter - el clásico  -->
+                <li>
+                    <a href="https://twitter.com">
+                        <img src="/images/twitter.png">
+                    </a>
+                </li>
+
+                    <!-- add or remove social profiles as you see fit -->
+
+            </ul>
+
+        </aside>   
+    </div>
+        
+<!-- that’s all folks! -->
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-93160918-1', 'auto');
+  ga('send', 'pageview');
+
+    </script>
+</body>
+</html>

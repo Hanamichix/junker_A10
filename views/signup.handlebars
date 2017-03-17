@@ -1,0 +1,144 @@
+<!doctype html>
+
+<html>
+<head>
+  <title>Log In</title> 
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+  <link href = "css/signup.css" rel = "stylesheet">
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="js/bootstrap.min.js"></script> 
+<script type="text/javascript">
+window.onload = function(){
+        var el = document.getElementById("upload");
+
+        el.addEventListener("change", readImage, false);
+        var canvas = document.getElementById("myCanvas");
+        var context = canvas.getContext("2d");
+
+        function readImage() {
+            var filename = el.value.replace(/^.*\\/, "");
+            if ( this.files && this.files[0] ) {
+                var FR= new FileReader();
+                FR.onload = function(e) {
+                    var img = new Image();
+                    img.onload = function() {
+                        img.style.height = '100px';
+                        img.style.width = '100px';
+                        context.drawImage(img, 0, 0, 100, 100);
+                        var dataURL = canvas.toDataURL("image/jpg");
+//                        console.log(dataURL);
+                        var data = dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
+                        console.log(data);
+                        localStorage.setItem(filename, data);
+                        
+
+                
+                    };
+                    img.src = e.target.result;
+                };       
+                FR.readAsDataURL( this.files[0] );
+            }
+        }
+    function getBase64Image(img) {
+
+    var dataURL = canvas.toDataURL("image/png");
+
+    return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
+}
+
+    }
+
+    function validateForm(thisform){
+        var x=document.forms["waterform"]["name"].value;
+        if (x==null || x==""){
+            alert("fill out name");
+            return false;
+        }
+        x = document.forms["waterform"]["description"].value;
+        if (x==null || x==""){
+            alert("fill out name");
+            return false;
+        }
+        x = document.forms["waterform"]["contact"].value;
+        if (x==null || x==""){
+            alert("fill out name");
+            return false;
+        }
+        return true;
+    }
+
+function validate_required(field,alerttxt)
+{
+with (field)
+  {
+  if (value==null||value=="")
+    {alert(alerttxt);return false}
+  else {return true}
+  }
+}
+
+
+    </script>
+
+
+</head>
+<body>
+  <div class="login-signup s-atbottom" id="signup">
+      <div class="login-signup-title">
+        SIGN UP
+      </div>
+      <form class="login-signup-content" method="get" action = "/signed">
+        <div class="input-name input-margin">
+            <h2>Legal Name</h2>
+        </div>
+        <input type="text" name="name" value="" class="field-input" />
+
+        <div class="input-name input-margin">
+            <h2>Username (E-Mail) </h2>
+        </div>
+        <input type="text" name="email" value="" class="field-input" />
+
+        <div class="input-name input-margin">
+            <h2>Password</h2>
+        </div>
+        <input type="password" name="password" value="" class="field-input" />
+
+        <div class="input-name input-margin">
+            <h2>Biography</h2>
+        </div>
+        <input type="text" name="bio" value="" class="field-input" />
+
+        <div class="input-name input-margin">
+            <h2>Phone Number</h2>
+        </div>
+        <input type="text" name="phone" value="" class="field-input" />
+
+        <div class="input-name input-margin">
+            <h2>Choose a picture</h2>
+        </div>
+        <div class="formgroup" id="photo-form">
+                <input type="file" accept="image/*" src="public/images/picture.jpg" id="upload" name="picture" alt="Submit Form">
+        </div>
+        <div>
+          <canvas id="myCanvas" width="100" height="100"></canvas>
+        </div>
+        
+        <input type="submit" value="Submit!" class="btn btn-lg btn-primary"> 
+        
+        
+      </form>
+  </div>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-93160918-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body>

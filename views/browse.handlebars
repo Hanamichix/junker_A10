@@ -1,0 +1,277 @@
+<!doctype html>
+
+<html>
+<head>
+	<title>Browse</title>	
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no>
+  
+	<link href = "css/bootstrap.css" rel = "stylesheet">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/bootstrap-theme.min.css" rel="stylesheet">
+	<link href="css/browse.css" rel="stylesheet">
+  <link href="css/sidebar.css" rel="stylesheet">
+	<script src="https://code.jquery.com/jquery.js"></script>
+  <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+  <script src="js/browse.js"></script>
+  <script src="js/sidebar.js"></script>
+
+
+	
+	<script>
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+		function myFunction() {
+    		document.getElementById("myNavigator").classList.toggle("show");
+		}
+
+		// Close the dropdown if the user clicks outside of it
+		window.onclick = function(e) {
+  			if (!e.target.matches('.dropbtn')) {
+  				if (e.target.matches('.dropdown-content')){
+  					return;
+  				}
+    			var dropdowns = document.getElementsByClassName("dropdown-content");
+    			for (var d = 0; d < dropdowns.length; d++) {
+      				var openDropdown = dropdowns[d];
+      				if (openDropdown.classList.contains('show')) {
+        				openDropdown.classList.remove('show');
+      				}
+    			}
+  			}
+		}
+    
+	</script>
+  <style type="text/css">
+    .img-thumbnail {
+      display: block;
+      margin: 0 auto;
+      height: 350px;
+      width: 350px;
+    }
+    p {
+      margin-left: 10%;
+      margin-right: 10%;
+      font-size: 20px;
+    }
+    .item {
+      font-size: 30px;
+    }
+    h2 {
+      text-align: center;
+    }
+    h3 {
+      text-align: center;
+      font-size: 30px;
+    }
+    #like {
+      margin-top:5%;
+      margin-left: 15%;
+    }
+    #dislike {
+      margin-top: 5%;
+      margin-right: 15%;
+    }
+  </style>
+</head>
+
+<body>
+	<div class="container" id = "container">
+    <nav class="navbar navbar-default navbar-collapse">
+      <div class="container-fluid">
+        <div class = "navbar-header">
+        <span style="font-size:30px;float:left; width:20%; top:5px " onclick="openNav()" class = "glyphicon">&#xe055;</span>
+        <span style="font-size:30px;float:right; top:5px"  class = "glyphicon"><a href="index" style="color:black">&#xe021;</a></span>
+        <!--
+        <span style="font-size:30px; margin:5 20%">Browse</span>
+        -->
+        <span style="font-size:30px; padding-left: 60px;">Browse</span>
+        <!--
+
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="match"> Matches</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="index"><span class="glyphicon glyphicon-home"></span></a></li>
+          <li><a href="login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        </ul>
+        -->
+      </div>
+      </div>
+    </nav>
+
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <a href="browse">Browse</a>
+      <a href="match">Matches</a>
+      <a href="newpost">Create New Post</a>
+      <a href="myPost">My Posts</a>
+      <a href="profile">Profile</a>
+      <a href="index">Log Out</a>
+
+    </div>
+
+
+
+
+		<h2>Browsing Posts</h2>
+    <div class="alert alert-success" id="success-alert" style = "z-index: 99">
+    <strong>Liked! </strong>
+    Your preference is recorded.
+    </div>
+		<!-- divs are invisible structuring elements that stack vertically by default. Use them to organize your code &#9776 -->
+		<!-- img tags are images. Lorem Pixel will deliver random images; handy! -->
+		<!-- a are anchors, also known as hyperlinks. Use the href attribute to tell the browser where to go when the user clicks -->
+		<!--
+			<div class="wrapper">
+  				<div class="scrolls">
+       				<img src=“images/lorempixel.people.1.jpeg" />
+       				<img src=”images/lorempixel.people.1.jpeg" />
+       				<img src="images/lorempixel.people.1.jpeg" />
+       				<img src="images/lorempixel.people.1.jpeg" />
+  				</div>
+  			</div>
+  		-->
+<div id="myCarousel" class="carousel slide">
+    <!-- 轮播（Carousel）指标 -->
+    <!--
+    <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" 
+            class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>   
+    -->
+    <!-- 轮播（Carousel）项目 -->
+    <div class="carousel-inner">
+        <div class="item active">
+        <!--
+            <img src="/images/logo.png" alt="Welcome to Exchanging items! Please click Dislike to continue" class = "img-thumbnail">
+            -->
+            <p> Welcome to Junker! Please click "Dislike" to continue.</p>
+        </div>
+        <!--
+        <div class="item">
+            <img src="/wp-content/uploads/2014/07/slide2.png" alt="Second slide">
+            <h5>Test</h5>
+            <p>Descriptions</p>
+        </div>
+        <div class="item">
+            <img src="/wp-content/uploads/2014/07/slide3.png" alt="Third slide">
+        </div>
+        -->
+        {{#each items}}
+        <div class = "item" id = {{itemid}}>
+          <img src={{imageURL}} alt="Item not found" class="img img-rounded img-thumbnail">
+        
+            <h3>Item: {{name}}</h3>
+         
+            <p>Description: {{description}}</p>
+           
+        </div>
+        {{/each}}
+        <div class="item">
+            <p> No more posts :-( Come check out later!</p>
+            <p> Please click "Home" to return to the homepage.</p>
+        </div>
+
+    </div>
+    <!-- 轮播（Carousel）导航 -->
+    <!--
+    <a class="carousel-control left" href="#myCarousel" 
+        data-slide="prev">&lsaquo;</a>
+    <a class="carousel-control right" href="#myCarousel" 
+        data-slide="next">&rsaquo;</a>
+      -->
+    <!-- 控制按钮 -->
+
+</div> 
+<!--
+<script>
+$(function(){
+        // 初始化轮播    
+        // 停止轮播
+        // 循环轮播到上一个项目
+        // 循环轮播到下一个项目
+        $(".next-slide").click(function(){
+            $("#myCarousel").carousel('next');
+        });
+        // 循环轮播到某个特定的帧 
+    });
+</script>
+-->
+
+
+
+  		<!--
+  		<div class = "browsebottom">
+  			<button id="like" class="acceptbutton">Like</button>
+  		<button id="dislike" class="declinebutton">Dislike</button>
+
+  		</div>
+  		-->
+      <!--
+      <div class="btn-group dropup">
+        <button id="like" class="button btn-success btn-lg dropdown-toggle" data-toggle="dropdown">Like
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" role="menu">
+          <li>
+            <a href="#">功能</a>
+          </li>
+          <li>
+            <a href="#">另一个功能</a>
+          </li>
+          <li>
+            <a href="#">其他</a>
+          </li>
+        </ul>
+      </div>
+      -->
+
+      <button id="like" class="button btn-success btn-lg" type = "button" 
+      data-toggle = "popover" data-placement = "top" title = "Choose an item to exchange with">Like</button>
+
+      <button id="dislike" class="button btn-danger btn-lg" type = "button">Skip</button>
+
+      <div id="myModal" class="modal">
+
+  <!-- Modal content -->
+        <div class="modal-content">
+          <div class="modal-header">
+            <span class="close">&times;</span>
+            <h2 id = "modalHeading"></h2>
+          </div>
+          <div class="modal-body" id = "modalbody">
+            <p id = "modalContent"></p>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</div>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-93160918-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body>
+</html>

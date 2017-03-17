@@ -1,0 +1,194 @@
+{
+	"accounts": [
+		{
+			"userid" : 0,
+			"name": "Doug Engelbart",
+			"posts": [3,4],
+			"contact": 1234,
+			"email": "admin0@gmail.com",
+			"bio": "student",
+			"phone": 8483044050,
+			"facebook": "https://www.facebook.com/profile.php?id=000000042397143",
+			"twitter": "",
+			"matches": [
+				{"youritem": 0,
+				"item": 2},
+				{"youritem": 1,
+				"item": 3}
+			]
+	
+		},
+		{
+			"userid" : 1,
+			"name": "Ivan Sutherland",
+			"posts": [0, 1, 3],
+			"contact": 1234,
+			"email": "admin0@gmail.com",
+			"bio": "student",
+			"phone": 8483044050,
+			"facebook": "https://www.facebook.com/profile.php?id=000000042397143",
+			"twitter": "",
+			"matches": [
+
+				{"youritem": 1,
+				"item": 3}
+			]
+		},
+		{
+			"userid" : 2,
+			"name": "Lucy Suchman",
+			"posts": [2, 5],
+			"contact": 1234,
+			"email": "admin1@gmail.com",
+			"bio": "student",
+			"phone": 8483044051,
+			"facebook": "https://www.facebook.com/profile.php?id=000000042397143",
+			"twitter": "",
+			"matches": [
+			]
+		}
+
+	],
+	"items": [
+		{
+			"itemid": 0,
+			"name": "pencil",
+			"description": "HB pencil, writes smoothly.",
+			"owner": 1,
+			"imageURL": "/images/pencil.jpg",	
+			"ownername": "Doug Engelbart",
+			"email": "admin0@gmail.com",
+			"bio": "student",
+			"phone": 8483044050,
+			"facebook": "https://www.facebook.com/profile.php?id=000000042397143",
+			"twitter": "",
+			"interested": [
+				{
+					"userid": 0,
+					"tradewith": 4
+
+				},
+				
+				{
+					"userid": 2,
+					"tradewith": 2
+				}
+			],
+			"deal" : false	
+		},
+		{
+			"itemid": 1,
+			"name": "football",
+			"description": "Leather football, 90% new. You deserve it!",
+			"owner": 1,
+			"ownername": "Ivan Sutherland",
+			"imageURL": "/images/football.jpg",
+			"email": "admin0@gmail.com",
+			"bio": "student",
+			"phone": 8483044050,
+			"facebook": "https://www.facebook.com/profile.php?id=000000042397143",
+			"twitter": "",
+			"interested": [
+				{
+					"userid": 0,
+					"tradewith": 0
+				}
+			],
+			
+			"deal" : false			
+		},
+		{
+			"itemid": 2,
+			"name": "bag",
+			"description": "Pink handbag. Used for a couple times. Perfect for commuting and dating!",
+			"owner": 2,
+			"ownername": "Lucy Suchman",
+			"imageURL": "/images/bag.jpg",
+			"email": "admin1@gmail.com",
+			"bio": "student",
+			"phone": 8483044051,
+			"facebook": "https://www.facebook.com/profile.php?id=000000042397143",
+			"twitter": "",
+			"interested": [
+
+				{
+					"userid": 1,
+					"tradewith": 3
+				}
+
+			],
+			
+			"deal" : false			
+		},
+		{
+			"itemid": 3,
+			"name": "box",
+			"description": "Plastic box with velvet surface. Dirt-resisting.",
+			"owner": 1,
+			"imageURL": "/images/box.JPG",
+			"ownername": "Ivan Sutherland",
+			"email": "admin0@gmail.com",
+			"bio": "student",
+			"phone": 8483044050,
+			"facebook": "https://www.facebook.com/profile.php?id=000000042397143",
+			"twitter": "",
+			"interested": [
+				{
+					"userid": null,
+					"tradewith": null
+				}
+			],
+			
+			"deal" : false			
+
+
+		},
+		{
+			"itemid": 4,
+			"name": "sharpie",
+			"description": "a sharpie",
+			"owner": 0,
+			"imageURL": "/images/sharpie.jpg",
+			"ownername": "Doug Engelbart",
+			"email": "admin0@gmail.com",
+			"bio": "student",
+			"phone": 8483044050,
+			"facebook": "https://www.facebook.com/profile.php?id=000000042397143",
+			"twitter": "",
+			"interested": [
+				{
+					"userid": 1,
+					"tradewith": 0
+				}
+			],
+			
+			"deal" : false			
+
+		},
+		{
+			"itemid": 5,
+			"name": "bike",
+			"description": "a bike",
+			"owner": 2,
+			"ownername": "Lucy Suchman",
+			"imageURL": "/images/bike.jpg",
+			"email": "admin1@gmail.com",
+			"bio": "student",
+			"phone": 8483044051,
+			"facebook": "https://www.facebook.com/profile.php?id=000000042397143",
+			"twitter": "",
+			"interested": [
+				{
+					"userid": null,
+					"tradewith": null
+				}
+			],
+			
+			"deal" : false			
+
+
+		}
+	]
+
+
+}
